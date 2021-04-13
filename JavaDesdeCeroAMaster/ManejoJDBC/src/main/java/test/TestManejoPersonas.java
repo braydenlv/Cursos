@@ -7,15 +7,30 @@ import java.util.List;
 
 public class TestManejoPersonas {
     public static void main(String[] args) {
-        System.out.println("============================SELECT============================");
+
         PersonaDAO personaDAO = new PersonaDAO(); //Data Access Object
+
+        System.out.println("============================SELECT============================");
         imprimirTabla(personaDAO);
 
         System.out.println("============================INSERT============================");
         //Insertando un nuevo objeto de tipo Persona
-        Persona personaNueva = new Persona("Sandra","Jaramillo","sjaramillo@correo.com","6547898");
-        personaDAO.insertar(personaNueva);
+        Persona persona = new Persona("Pedro","Sanchez","psanchez@correo.com","7418596");
+        personaDAO.insertar(persona);
         imprimirTabla(personaDAO);
+
+        System.out.println("============================UPDATE============================");
+        //Se cambian los valores para la prueba
+        persona.setIdPersona(7);
+        persona.setNombre("Pablo");
+        //se ejecuta
+        personaDAO.actualizar(persona);
+        imprimirTabla(personaDAO);
+
+        System.out.println("============================DELETE============================");
+        personaDAO.eliminar(persona);
+        imprimirTabla(personaDAO);
+
     }
 
     public static void imprimirTabla(PersonaDAO personaDAO){
