@@ -3,7 +3,6 @@ package datos;
 import java.sql.*;
 
 public class Conexion {
-
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&publicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "admin";
@@ -16,15 +15,15 @@ public class Conexion {
         resultSet.close();
     }
 
-    public static void close(Statement statement) throws SQLException {
+    public static void close (Statement statement) throws SQLException {
         statement.close();
     }
 
-    public static void close(PreparedStatement preparedStatement) throws SQLException {
+    public static void close (PreparedStatement preparedStatement) throws SQLException {
         preparedStatement.close();
     }
 
-    public static void close(Connection connection) throws SQLException {
+    public static void close (Connection connection) throws SQLException {
         connection.close();
     }
 }
