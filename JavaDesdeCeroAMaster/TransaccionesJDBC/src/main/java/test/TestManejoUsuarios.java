@@ -23,10 +23,11 @@ public class TestManejoUsuarios {
 
             //Prueba rollback
             //Usuario updateUsuario = new Usuario (2, "xgomez","741811111111111111111111111111111111111111111111111111");
-            Usuario updateUsuario = new Usuario (2, "xgomez","7418");
+
+            Usuario updateUsuario = new Usuario (1, "xgomez","7418");
             usuarioJDBC.actualizar(updateUsuario);
 
-            Usuario insertUsuario = new Usuario ("elopera", "6548");
+            Usuario insertUsuario = new Usuario ("blopera", "6548");
             usuarioJDBC.insertar(insertUsuario);
 
             conexion.commit();
@@ -39,6 +40,7 @@ public class TestManejoUsuarios {
         } catch (SQLException throwables) {
             throwables.printStackTrace(System.out);
             try {
+                System.out.println("Ocurrio un error, se realiza rollback de los querys.");
                 conexion.rollback();
             } catch (SQLException e) {
                 e.printStackTrace(System.out);

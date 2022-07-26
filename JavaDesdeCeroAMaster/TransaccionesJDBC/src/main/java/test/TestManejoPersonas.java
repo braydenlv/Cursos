@@ -20,11 +20,12 @@ public class TestManejoPersonas {
 
             PersonaJDBC personaJDBC = new PersonaJDBC(conexion);
 
-            Persona updatePersona = new Persona(5, "Camilo", "Jaramillo", "cjaramillo@correo.com", "6547898");
+            Persona updatePersona = new Persona(1, "Camilo", "Jaramillo", "cjaramillo@correo.com", "6547898");
             personaJDBC.actualizar(updatePersona);
 
             //Prueba rollback
             //Persona personaInsert = new Persona("Luisa", "Zapata1234567890123456789012345678901234567890123456789", "lzapata@correo.com","3256987");
+
             Persona personaInsert = new Persona("Luisa", "Zapata", "lzapata@correo.com", "3256987");
             personaJDBC.insertar(personaInsert);
 
@@ -38,6 +39,7 @@ public class TestManejoPersonas {
         } catch (SQLException throwables) {
             throwables.printStackTrace(System.out);
             try {
+                System.out.println("Ocurrio un error, se realiza rollback de los querys.");
                 conexion.rollback();
             } catch (SQLException e) {
                 e.printStackTrace(System.out);

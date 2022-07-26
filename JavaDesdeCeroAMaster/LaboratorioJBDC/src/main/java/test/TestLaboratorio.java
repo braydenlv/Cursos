@@ -1,13 +1,13 @@
 package test;
 
-import datos.UsuarioDAO;
+import datos.PersonaDaoJdbc;
 import domain.Usuario;
 
 import java.util.List;
 
 public class TestLaboratorio {
     public static void main(String[] args){
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        PersonaDaoJdbc usuarioDAO = new PersonaDaoJdbc();
 
 
         System.out.println("============================INSERT============================");
@@ -35,7 +35,7 @@ public class TestLaboratorio {
 
     }
 
-    public static void imprimirTabla(UsuarioDAO usuarioDAO){
+    public static void imprimirTabla(PersonaDaoJdbc usuarioDAO){
         List<Usuario> usuarios = usuarioDAO.seleccionar();
         for (Usuario usuario : usuarios) {
             System.out.println(usuario);

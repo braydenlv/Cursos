@@ -1,5 +1,6 @@
 package datos;
 
+import domain.PersonaDTO;
 import domain.Usuario;
 
 import java.sql.Connection;
@@ -9,11 +10,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioDAO {
-    private static final String SQL_SELECT = "SELECT id_usuario, usuario, password FROM test.usuario";
-    private static final String SQL_INSERT = "INSERT INTO test.usuario (usuario, password) VALUES (?,?)";
-    private static final String SQL_UPDATE = "UPDATE test.usuario SET usuario = ?, password = ? WHERE id_usuario = ?";
-    private static final String SQL_DELETE = "DELETE FROM test.usuario WHERE id_usuario = ?";
+public class PersonaDaoJdbc implements PersonaDAO{
+    private static final String SQL_SELECT = "SELECT id_persona, nombre, apellido, email, telefono FROM test.persona";
+    private static final String SQL_INSERT = "INSERT INTO test.persona (nombre, apellido, email, telefono) VALUES (?,?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE test.usuario SET nombre = ?, apellido = ?, email = ?, telefono = ? WHERE id_persona = ?";
+    private static final String SQL_DELETE = "DELETE FROM test.persona WHERE id_persona = ?";
 
     public List<Usuario> seleccionar() {
         Connection conn = null;
@@ -21,7 +22,7 @@ public class UsuarioDAO {
         ResultSet rs = null;
         Usuario user = null;
 
-        List<Usuario> personas = new ArrayList<Usuario>();
+        List<Usuario> personas = new ArrayList<>();
 
         try {
             conn = Conexion.getConnection();
@@ -117,5 +118,55 @@ public class UsuarioDAO {
             }
         }
         return registros;
+    }
+
+    @Override
+    public List<PersonaDTO> select() {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Usuario user = null;
+
+        List<PersonaDTO> personas = new ArrayList<PersonaDTO>();
+
+        try {
+            conn = Conexion.getConnection();
+            ps = conn.prepareStatement(SQL_SELECT);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int idPersona = rs.getInt("id_persona");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                String email = rs.getString("email");
+                String telefono = rs.getString("telefono");
+                personas.add(new PersonaDTO(idPersona, nombre, apellido, email, telefono));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace(System.out);
+        } finally {
+            try {
+                Conexion.close(rs);
+                Conexion.close(ps);
+                Conexion.close(conn);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace(System.out);
+            }
+        }
+        return personas;
+    }
+
+    @Override
+    public int insert(PersonaDTO persona) {
+        return 0;
+    }
+
+    @Override
+    public int update(PersonaDTO persona) {
+        return 0;
+    }
+
+    @Override
+    public int delete(PersonaDTO persona) {
+        return 0;
     }
 }
