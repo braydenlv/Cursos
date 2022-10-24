@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="PatronesDeDisenoYBuenasPracticas" />
         <module name="TransaccionesJDBC" />
+        <module name="JDBC_ManejoDePoolDeConexiones" />
       </profile>
     </annotationProcessing>
   </component>
