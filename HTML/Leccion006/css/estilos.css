@@ -1,0 +1,15 @@
+h1{
+    color: rgb(34, 113, 218);
+}
+        
+h2{
+    color:darkgoldenrod
+}
+
+p{
+    color: blueviolet;
+    background-color: darkgoldenrod;
+    padding: 15px;
+    border: 10px solid powderblue;
+    margin: 50px;
+}

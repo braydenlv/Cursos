@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atributos form HTML</title>
+</head>
+<body>
+    <h1>Formularios en HTML</h1>
+    <!--action es la URL que procesará el formulario-->
+    <!--target sirve para indicar donde se recibirá la respuesta del form, por defecto es _self-->
+    <!--autocomplete es para indicarle que guarde o no información previa-->
+    <form action="mi_servidor" method="post" target="_self" autocomplete="off">
+        <fieldset>
+            <legend>Datos persona:</legend>
+            <label for="nombre">Nombre</label><br/>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/><br/>
+
+            <label for="apellidos">Apellidos</label><br/>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" required="true"/><br/>
+
+            <label for="correo">Correo electr&oacute;nico</label><br/>
+            <input type="email" id="correo" name="correo" placeholder="Escribe tu correo"><br/>
+
+            <label for="edad">Edad</label><br/>
+            <input type="number" id="edad" name="edad"><br/>
+
+            <label>Sexo</label><br/>
+            <input type="radio" name="sexo" id="femenino" value="femenino">
+            <label for="femenino">Femenino</label><br/>
+            <input type="radio" name="sexo" id="masculino" value="masculino">
+            <label for="masculino">Masculino</label><br/>
+
+            <label>M&uacute;sica favorita</label><br/>
+            <input type="checkbox" name="musica" id="clasica"/>
+            <label for="clasica">Cl&aacute;sica</label><br/>
+            <input type="checkbox" name="musica" id="rock"/>
+            <label for="rock">Rock</label><br/>
+            <input type="checkbox" name="musica" id="jazz"/>
+            <label for="jazz">Jazz</label><br/>
+            <input type="checkbox" name="musica" id="urbana"/>
+            <label for="urbana">Urbana</label><br/>
+            <input type="checkbox" name="musica" id="folclorica"/>
+            <label for="folclorica">Folcl&oacute;rica</label><br/>
+
+            <label for="autos">Marca de autos preferida</label><br/>
+            <select name="autos" id="autos" multiple="true">
+                <option value="mazda">Mazda</option>
+                <option value="renault">Renault</option>
+                <option value="chevrolet">Chevrolet</option>
+                <option value="nissan">Nissan</option>
+                <option value="hyunday">Hyunday</option>
+                <option value="ford" selected="true">Ford</option>
+            </select><br/>
+
+            <label for="comentario">Comentarios</label><br/>
+            <textarea name="comentario" id="comentario" cols="30" rows="10">Esto aparecerá en el campo comentarios</textarea><br/>
+
+            <input type="submit" value="enviar"/>
+            <input type="submit" value="enviar sin validar" formnovalidate="formnovalidate"/>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion ormularios HTML</title>
+</head>
+<body>
+    <h1>Formularios en HTML</h1>
+    <!--<from novalidate> sirve para indicar que no va a realizar ningula validación dentro del form-->
+    <form>
+        <!--label es la etiqueta para los inputs-->
+        <label for="nombre">Nombre</label><br/>
+        <!--name sirve para especificar el parametro que se va a enviar hacia el servidor-->
+        <!--value sirve para poner un valor especifico al campo-->
+        <!--placeholder sirve para especificar o indicarle al usuario que debe de escribir en ese campo-->
+        <!--required sirve para indicar que un campo es obligatorio-->
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/><br/>
+        <label for="apellidos">Apellidos</label><br/>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" required="true"/><br/>
+        <input type="submit" value="enviar"/>
+        <!--De esta manera se puede enviar información sin validar el formulario-->
+        <input type="submit" value="enviar sin validar" formnovalidate="formnovalidate"/>
+    </form>
+</body>
+</html>

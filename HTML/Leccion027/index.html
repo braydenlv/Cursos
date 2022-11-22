@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Email en HTML</title>
+</head>
+<body>
+    <h1>Formularios en HTML</h1>
+    <form>
+        <label for="nombre">Nombre</label><br/>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/><br/>
+
+        <label for="apellidos">Apellidos</label><br/>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Escribe tus apellidos" required="true"/><br/>
+
+        <label for="correo">Correo electr&oacute;nico</label><br/>
+        <input type="email" id="correo" name="correo" placeholder="Escribe tu correo"><br/>
+
+        <!--step="any" sirve para indicar que acepta valores décimales-->
+        <label for="edad">Edad</label><br/>
+        <input type="number" id="edad" name="edad"><br/>
+
+        <input type="submit" value="enviar"/>
+        <input type="submit" value="enviar sin validar" formnovalidate="formnovalidate"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/*Con hasterisco de definen todos los elementos del HTML*/
+*{
+  margin: 0px;
+  padding: 0px; 
+}
+/*#nombreDelId*/
+#titulo_principal{
+    color: #f72585;
+    text-align: center;
+    margin: 10px;
+}
+h2{
+    color: #3f37c9;
+}
+p{
+    color: #457b9d;
+}
+
+/*.nombreDeLaClase*/
+.tarjeta{
+    border: 10px solid #560bad;
+    background-color: #f1faee;
+    text-align: center;
+    margin: 15px 100px;
+    padding: 15px;
+}
+.titulo{
+    color: #f72585;
+
+}

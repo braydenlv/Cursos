@@ -1,0 +1,24 @@
+h1{
+    color: rgb(34, 113, 218);
+}
+        
+h2{
+    color:darkgoldenrod
+}
+
+p{
+    color: blueviolet;
+    background-color: darkgoldenrod;
+    padding: 15px;
+    border-top: 10px solid powderblue;
+    /*
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    */
+    /*margin: 40px 10px 20px 30px; /*top right botton left*/
+    margin: auto 50px; /*centra los elementos de manera horizontal*/
+    text-align: center;
+
+}
